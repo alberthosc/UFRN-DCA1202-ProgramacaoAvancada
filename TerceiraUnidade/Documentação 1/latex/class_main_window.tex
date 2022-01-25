@@ -1,0 +1,84 @@
+\hypertarget{class_main_window}{}\doxysection{Referência da Classe Main\+Window}
+\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Diagrama de hierarquia para Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (Q\+Widget $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\label{class_main_window_a996c5a2b6f77944776856f08ec30858d}} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8                                       :}
+\DoxyCodeLine{9     QMainWindow(parent),}
+\DoxyCodeLine{10     ui(\textcolor{keyword}{new} Ui::MainWindow)}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     ui-\/>setupUi(\textcolor{keyword}{this});}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14      matrizX = 1;}
+\DoxyCodeLine{15      matrizY = 1;}
+\DoxyCodeLine{16      matrizZ = 1;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     ui-\/>tamanhoDaMatrizX-\/>QLineEdit::setValidator( \textcolor{keyword}{new} QIntValidator(0, 400, \textcolor{keyword}{this}));}
+\DoxyCodeLine{19     ui-\/>tamanhoDaMatrizY-\/>QLineEdit::setValidator( \textcolor{keyword}{new} QIntValidator(0, 400, \textcolor{keyword}{this}));}
+\DoxyCodeLine{20     ui-\/>tamanhoDaMatrizZ-\/>QLineEdit::setValidator( \textcolor{keyword}{new} QIntValidator(0, 400, \textcolor{keyword}{this}));}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     ui-\/>boxX-\/>QLineEdit::setValidator( \textcolor{keyword}{new} QIntValidator(0, 400, \textcolor{keyword}{this}));}
+\DoxyCodeLine{23     ui-\/>boxY-\/>QLineEdit::setValidator( \textcolor{keyword}{new} QIntValidator(0, 400, \textcolor{keyword}{this}));}
+\DoxyCodeLine{24     ui-\/>boxZ-\/>QLineEdit::setValidator( \textcolor{keyword}{new} QIntValidator(0, 400, \textcolor{keyword}{this}));}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     ui-\/>elipsoidX-\/>QLineEdit::setValidator( \textcolor{keyword}{new} QIntValidator(0, 400, \textcolor{keyword}{this}));}
+\DoxyCodeLine{27     ui-\/>elipsoidY-\/>QLineEdit::setValidator( \textcolor{keyword}{new} QIntValidator(0, 400, \textcolor{keyword}{this}));}
+\DoxyCodeLine{28     ui-\/>elipsoidZ-\/>QLineEdit::setValidator( \textcolor{keyword}{new} QIntValidator(0, 400, \textcolor{keyword}{this}));}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     ui-\/>raioSphere-\/>QLineEdit::setValidator( \textcolor{keyword}{new} QIntValidator(0, 400, \textcolor{keyword}{this}));}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     ui-\/>mudaCorR-\/>QLineEdit::setValidator( \textcolor{keyword}{new} QIntValidator(0, 400, \textcolor{keyword}{this}));}
+\DoxyCodeLine{33     ui-\/>mudaCorG-\/>QLineEdit::setValidator( \textcolor{keyword}{new} QIntValidator(0, 400, \textcolor{keyword}{this}));}
+\DoxyCodeLine{34     ui-\/>mudaCorB-\/>QLineEdit::setValidator( \textcolor{keyword}{new} QIntValidator(0, 400, \textcolor{keyword}{this}));}
+\DoxyCodeLine{35     ui-\/>mudaCorA-\/>QLineEdit::setValidator( \textcolor{keyword}{new} QIntValidator(0, 400, \textcolor{keyword}{this}));}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37    ui-\/>horizontalSliderZTela-\/>QSlider::setMaximum(0);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}} 
+\index{MainWindow@{MainWindow}!````~MainWindow@{$\sim$MainWindow}}
+\index{````~MainWindow@{$\sim$MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$MainWindow()}{~MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47     \textcolor{keyword}{delete} ui;}
+\DoxyCodeLine{48 \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+2611/\+P\+R\+O\+J\+E\+T\+O\+P\+A2611/\mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\item 
+2611/\+P\+R\+O\+J\+E\+T\+O\+P\+A2611/\mbox{\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}

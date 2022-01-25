@@ -1,0 +1,387 @@
+\hypertarget{class_plotter}{}\doxysection{Referência da Classe Plotter}
+\label{class_plotter}\index{Plotter@{Plotter}}
+
+
+{\ttfamily \#include $<$plotter.\+h$>$}
+
+Diagrama de hierarquia para Plotter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_plotter}
+\end{center}
+\end{figure}
+\doxysubsection*{Slots Públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_plotter_a8960a31d2ecad5b07e2c03b4adac18da}{set\+Size\+Matriz}} (int x, int y, int z)
+\end{DoxyCompactItemize}
+\doxysubsection*{Sinais}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_plotter_a11736a8d049c94129c02e1fabe5e0f8c}{pos\+Atual\+Mouse}} (int x, int y)
+\end{DoxyCompactItemize}
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_plotter_a1807627530de30ae58dff3c42a823497}{Plotter}} (Q\+Widget $\ast$parent=nullptr)
+\item 
+void \mbox{\hyperlink{class_plotter_a06477bf987646f000a8982db1352a11d}{paint\+Event}} (Q\+Paint\+Event $\ast$event)
+\item 
+void \mbox{\hyperlink{class_plotter_aac8dfc9c49d06ccf085973ceec6eb50c}{mouse\+Press\+Event}} (Q\+Mouse\+Event $\ast$event)
+\item 
+void \mbox{\hyperlink{class_plotter_ab2bc4de7e7b866686beafde21cf2c872}{mouse\+Release\+Event}} (Q\+Mouse\+Event $\ast$event)
+\item 
+void \mbox{\hyperlink{class_plotter_a205980e41efe575db968d9d818ec0a3f}{on\+\_\+push\+Button\+\_\+clicked}} ()
+\item 
+void \mbox{\hyperlink{class_plotter_a2674e655a88f4b9e6e719744d5f96f88}{put\+Voxel}} ()
+\item 
+void \mbox{\hyperlink{class_plotter_a465e39876201b814d39928f6eef79b05}{cut\+Voxel}} ()
+\item 
+void \mbox{\hyperlink{class_plotter_ac4b13aa5ea3683c03ddaf5990be7770f}{put\+Box}} (int x1, int y1, int z1)
+\item 
+void \mbox{\hyperlink{class_plotter_a1a235b0db51c49d11ececd2177838ce8}{cut\+Box}} (int x1, int y1, int z1)
+\item 
+void \mbox{\hyperlink{class_plotter_ae2c27ac6581d9ee78b0c47b2df81c96b}{put\+Sphere}} (int r)
+\item 
+void \mbox{\hyperlink{class_plotter_ab10d9385320bc02954dbdd0077048c10}{cut\+Sphere}} (int r)
+\item 
+void \mbox{\hyperlink{class_plotter_aae3e64cbb834cac0fd8f2cebb84ce616}{put\+Ellipsoid}} (int rx, int ry, int rz)
+\item 
+void \mbox{\hyperlink{class_plotter_aad240e528e77b1580bb9fc26cb6309b4}{cut\+Ellipsoid}} (int rx, int ry, int rz)
+\item 
+void \mbox{\hyperlink{class_plotter_aab16ef164c4faec78f21d14c03126fe8}{set\+R\+G\+BA}} (int r, int g, int b, int a)
+\item 
+void \mbox{\hyperlink{class_plotter_a3833929fd5cb54c66d23b9a86b31aa89}{set\+Z\+Atual}} (int z)
+\item 
+void \mbox{\hyperlink{class_plotter_a5824b839b77a451f1ce3b77c574ebf88}{set\+Radio\+Button}} (int x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_plotter_a1807627530de30ae58dff3c42a823497}\label{class_plotter_a1807627530de30ae58dff3c42a823497}} 
+\index{Plotter@{Plotter}!Plotter@{Plotter}}
+\index{Plotter@{Plotter}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{Plotter()}{Plotter()}}
+{\footnotesize\ttfamily Plotter\+::\+Plotter (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14                                 : QWidget(parent)}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     matrizCriada = \textcolor{keyword}{false};}
+\DoxyCodeLine{17     matrizX = 1;}
+\DoxyCodeLine{18     matrizY = 1;}
+\DoxyCodeLine{19     matrizZ = 1;}
+\DoxyCodeLine{20     ZAtual = 0;}
+\DoxyCodeLine{21     selectedButton = 1;}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_plotter_a1a235b0db51c49d11ececd2177838ce8}\label{class_plotter_a1a235b0db51c49d11ececd2177838ce8}} 
+\index{Plotter@{Plotter}!cutBox@{cutBox}}
+\index{cutBox@{cutBox}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{cutBox()}{cutBox()}}
+{\footnotesize\ttfamily void Plotter\+::cut\+Box (\begin{DoxyParamCaption}\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{int}]{z1 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{153 \{}
+\DoxyCodeLine{154     \textcolor{keywordflow}{if}(matrizCriada)\{}
+\DoxyCodeLine{155         matriz-\/>\mbox{\hyperlink{class_sculptor_aa84a1b12b09e9e103fc8d78f8d1bc00f}{cutBox}}(XAtual,YAtual,ZAtual,x1,y1,z1);}
+\DoxyCodeLine{156         repaint();}
+\DoxyCodeLine{157     \}}
+\DoxyCodeLine{158 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_plotter_aad240e528e77b1580bb9fc26cb6309b4}\label{class_plotter_aad240e528e77b1580bb9fc26cb6309b4}} 
+\index{Plotter@{Plotter}!cutEllipsoid@{cutEllipsoid}}
+\index{cutEllipsoid@{cutEllipsoid}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{cutEllipsoid()}{cutEllipsoid()}}
+{\footnotesize\ttfamily void Plotter\+::cut\+Ellipsoid (\begin{DoxyParamCaption}\item[{int}]{rx,  }\item[{int}]{ry,  }\item[{int}]{rz }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{185 \{}
+\DoxyCodeLine{186     \textcolor{keywordflow}{if}(matrizCriada)\{}
+\DoxyCodeLine{187         matriz-\/>\mbox{\hyperlink{class_sculptor_a18d2922c111c4c13653ee07d878151ad}{cutEllipsoid}}(XAtual,YAtual,ZAtual,rx,ry,rz);}
+\DoxyCodeLine{188         repaint();}
+\DoxyCodeLine{189     \}}
+\DoxyCodeLine{190 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_plotter_ab10d9385320bc02954dbdd0077048c10}\label{class_plotter_ab10d9385320bc02954dbdd0077048c10}} 
+\index{Plotter@{Plotter}!cutSphere@{cutSphere}}
+\index{cutSphere@{cutSphere}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{cutSphere()}{cutSphere()}}
+{\footnotesize\ttfamily void Plotter\+::cut\+Sphere (\begin{DoxyParamCaption}\item[{int}]{r }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{169 \{}
+\DoxyCodeLine{170     \textcolor{keywordflow}{if}(matrizCriada)\{}
+\DoxyCodeLine{171         matriz-\/>\mbox{\hyperlink{class_sculptor_a67ab8c0ba5116adb8af1d01ad373ac15}{cutSphere}}(XAtual,YAtual,ZAtual,r);}
+\DoxyCodeLine{172         repaint();}
+\DoxyCodeLine{173     \}}
+\DoxyCodeLine{174 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_plotter_a465e39876201b814d39928f6eef79b05}\label{class_plotter_a465e39876201b814d39928f6eef79b05}} 
+\index{Plotter@{Plotter}!cutVoxel@{cutVoxel}}
+\index{cutVoxel@{cutVoxel}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{cutVoxel()}{cutVoxel()}}
+{\footnotesize\ttfamily void Plotter\+::cut\+Voxel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{137 \{}
+\DoxyCodeLine{138     \textcolor{keywordflow}{if}(matrizCriada)\{}
+\DoxyCodeLine{139         matriz-\/>\mbox{\hyperlink{class_sculptor_ad9d714a35fc8ae16d06eb5df37c3493c}{cutVoxel}}(XAtual,YAtual,ZAtual);}
+\DoxyCodeLine{140         repaint();}
+\DoxyCodeLine{141     \}}
+\DoxyCodeLine{142 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_plotter_aac8dfc9c49d06ccf085973ceec6eb50c}\label{class_plotter_aac8dfc9c49d06ccf085973ceec6eb50c}} 
+\index{Plotter@{Plotter}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void Plotter\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{69 \{}
+\DoxyCodeLine{70     XAtual = \textcolor{keyword}{event}-\/>x()/sizeRectX;}
+\DoxyCodeLine{71     YAtual = \textcolor{keyword}{event}-\/>y()/sizeRectY;}
+\DoxyCodeLine{72     \textcolor{keywordflow}{if}(event-\/>button() == Qt::LeftButton \&\& selectedButton == 1)\{}
+\DoxyCodeLine{73         this-\/>\mbox{\hyperlink{class_plotter_a2674e655a88f4b9e6e719744d5f96f88}{putVoxel}}();}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75     \textcolor{keywordflow}{if}(event-\/>button() == Qt::RightButton)\{}
+\DoxyCodeLine{76         this-\/>\mbox{\hyperlink{class_plotter_a465e39876201b814d39928f6eef79b05}{cutVoxel}}();}
+\DoxyCodeLine{77     \}}
+\DoxyCodeLine{78 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_plotter_ab2bc4de7e7b866686beafde21cf2c872}\label{class_plotter_ab2bc4de7e7b866686beafde21cf2c872}} 
+\index{Plotter@{Plotter}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void Plotter\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{81 \{}
+\DoxyCodeLine{82     \textcolor{keywordflow}{if}(event-\/>button() == Qt::LeftButton)\{}
+\DoxyCodeLine{83         XRelease = \textcolor{keyword}{event}-\/>x()/sizeRectX;}
+\DoxyCodeLine{84         YRelease = \textcolor{keyword}{event}-\/>y()/sizeRectY;}
+\DoxyCodeLine{85         \textcolor{keywordflow}{if}(XRelease != XAtual || YRelease != YAtual)\{}
+\DoxyCodeLine{86             \textcolor{keywordflow}{if}(selectedButton == 2)\{}
+\DoxyCodeLine{87                 this-\/>\mbox{\hyperlink{class_plotter_ac4b13aa5ea3683c03ddaf5990be7770f}{putBox}}(XRelease,YRelease,ZAtual);}
+\DoxyCodeLine{88             \}}
+\DoxyCodeLine{89             \textcolor{keywordflow}{if}(selectedButton == 3)\{}
+\DoxyCodeLine{90                 \textcolor{keywordtype}{double} raio = sqrt(pow(XRelease-\/XAtual,2) + pow(YRelease-\/YAtual,2));}
+\DoxyCodeLine{91                 this-\/>\mbox{\hyperlink{class_plotter_ae2c27ac6581d9ee78b0c47b2df81c96b}{putSphere}}(raio);}
+\DoxyCodeLine{92             \}}
+\DoxyCodeLine{93         \}}
+\DoxyCodeLine{94     \}}
+\DoxyCodeLine{95 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_plotter_a205980e41efe575db968d9d818ec0a3f}\label{class_plotter_a205980e41efe575db968d9d818ec0a3f}} 
+\index{Plotter@{Plotter}!on\_pushButton\_clicked@{on\_pushButton\_clicked}}
+\index{on\_pushButton\_clicked@{on\_pushButton\_clicked}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{on\_pushButton\_clicked()}{on\_pushButton\_clicked()}}
+{\footnotesize\ttfamily void Plotter\+::on\+\_\+push\+Button\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_plotter_a06477bf987646f000a8982db1352a11d}\label{class_plotter_a06477bf987646f000a8982db1352a11d}} 
+\index{Plotter@{Plotter}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily void Plotter\+::paint\+Event (\begin{DoxyParamCaption}\item[{Q\+Paint\+Event $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27     QPainter painter(\textcolor{keyword}{this});}
+\DoxyCodeLine{28     QBrush brush;}
+\DoxyCodeLine{29     QPen pen;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     brush.setColor(QColor(255,255,255));}
+\DoxyCodeLine{32     brush.setStyle(Qt::SolidPattern);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     pen.setColor(QColor(0,0,0));}
+\DoxyCodeLine{35     pen.setWidth(1);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     painter.setBrush(brush);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     painter.setPen(pen);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     painter.drawRect(0,0,width(),height());}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keywordflow}{if}(matrizCriada)\{}
+\DoxyCodeLine{44         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0;j<matrizY;j++)\{}
+\DoxyCodeLine{45             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k = 0;k<matrizX;k++)\{}
+\DoxyCodeLine{46                 brush.setColor(QColor(255,255,255));}
+\DoxyCodeLine{47                 painter.setBrush(brush);}
+\DoxyCodeLine{48                 \textcolor{keywordflow}{if}(matriz-\/>\mbox{\hyperlink{class_sculptor_a7cde9d861fb3bf699d66acef5a9bf0ab}{getIsOn}}(k,j,ZAtual))\{}
+\DoxyCodeLine{49                     vector<int> cores = matriz-\/>\mbox{\hyperlink{class_sculptor_ae8bbb7476ed5d015b95e8a3e5bf4b287}{getColor}}(k,j,ZAtual);}
+\DoxyCodeLine{50                     brush.setColor(QColor(cores[0],cores[1],cores[2]));}
+\DoxyCodeLine{51                     painter.setBrush(brush);}
+\DoxyCodeLine{52                     painter.drawRect(sizeRectX*k,sizeRectY*j,sizeRectX,sizeRectY);}
+\DoxyCodeLine{53                 \}}
+\DoxyCodeLine{54                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{55                     painter.drawRect(sizeRectX*k,sizeRectY*j,sizeRectX,sizeRectY);}
+\DoxyCodeLine{56                     painter.drawLine(sizeRectX*k,sizeRectY*j,sizeRectX*(k+1),sizeRectY*(j+1));}
+\DoxyCodeLine{57                 \}}
+\DoxyCodeLine{58             \}}
+\DoxyCodeLine{59         \}}
+\DoxyCodeLine{60     \}}
+\DoxyCodeLine{61     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{62         brush.setColor(QColor(255,255,255));}
+\DoxyCodeLine{63         painter.setBrush(brush);}
+\DoxyCodeLine{64         painter.drawRect(0,0,width(),height());}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_plotter_a11736a8d049c94129c02e1fabe5e0f8c}\label{class_plotter_a11736a8d049c94129c02e1fabe5e0f8c}} 
+\index{Plotter@{Plotter}!posAtualMouse@{posAtualMouse}}
+\index{posAtualMouse@{posAtualMouse}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{posAtualMouse}{posAtualMouse}}
+{\footnotesize\ttfamily void Plotter\+::pos\+Atual\+Mouse (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_plotter_ac4b13aa5ea3683c03ddaf5990be7770f}\label{class_plotter_ac4b13aa5ea3683c03ddaf5990be7770f}} 
+\index{Plotter@{Plotter}!putBox@{putBox}}
+\index{putBox@{putBox}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{putBox()}{putBox()}}
+{\footnotesize\ttfamily void Plotter\+::put\+Box (\begin{DoxyParamCaption}\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{int}]{z1 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{145 \{}
+\DoxyCodeLine{146     \textcolor{keywordflow}{if}(matrizCriada)\{}
+\DoxyCodeLine{147         matriz-\/>\mbox{\hyperlink{class_sculptor_a311ad7a0fb83fc67ac1f378be8e99fe1}{putBox}}(XAtual,YAtual,ZAtual,x1,y1,z1);}
+\DoxyCodeLine{148         repaint();}
+\DoxyCodeLine{149     \}}
+\DoxyCodeLine{150 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_plotter_aae3e64cbb834cac0fd8f2cebb84ce616}\label{class_plotter_aae3e64cbb834cac0fd8f2cebb84ce616}} 
+\index{Plotter@{Plotter}!putEllipsoid@{putEllipsoid}}
+\index{putEllipsoid@{putEllipsoid}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{putEllipsoid()}{putEllipsoid()}}
+{\footnotesize\ttfamily void Plotter\+::put\+Ellipsoid (\begin{DoxyParamCaption}\item[{int}]{rx,  }\item[{int}]{ry,  }\item[{int}]{rz }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{177 \{}
+\DoxyCodeLine{178     \textcolor{keywordflow}{if}(matrizCriada)\{}
+\DoxyCodeLine{179         matriz-\/>\mbox{\hyperlink{class_sculptor_a093615b0c2b9b3a17a56300b9b939f39}{putEllipsoid}}(XAtual,YAtual,ZAtual,rx,ry,rz);}
+\DoxyCodeLine{180         repaint();}
+\DoxyCodeLine{181     \}}
+\DoxyCodeLine{182 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_plotter_ae2c27ac6581d9ee78b0c47b2df81c96b}\label{class_plotter_ae2c27ac6581d9ee78b0c47b2df81c96b}} 
+\index{Plotter@{Plotter}!putSphere@{putSphere}}
+\index{putSphere@{putSphere}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{putSphere()}{putSphere()}}
+{\footnotesize\ttfamily void Plotter\+::put\+Sphere (\begin{DoxyParamCaption}\item[{int}]{r }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{161 \{}
+\DoxyCodeLine{162     \textcolor{keywordflow}{if}(matrizCriada)\{}
+\DoxyCodeLine{163         matriz-\/>\mbox{\hyperlink{class_sculptor_a794a2b6ee8fc8098fd6150cb46101fc6}{putSphere}}(XAtual,YAtual,ZAtual,r);}
+\DoxyCodeLine{164         repaint();}
+\DoxyCodeLine{165     \}}
+\DoxyCodeLine{166 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_plotter_a2674e655a88f4b9e6e719744d5f96f88}\label{class_plotter_a2674e655a88f4b9e6e719744d5f96f88}} 
+\index{Plotter@{Plotter}!putVoxel@{putVoxel}}
+\index{putVoxel@{putVoxel}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{putVoxel()}{putVoxel()}}
+{\footnotesize\ttfamily void Plotter\+::put\+Voxel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{129 \{}
+\DoxyCodeLine{130     \textcolor{keywordflow}{if}(matrizCriada)\{}
+\DoxyCodeLine{131         matriz-\/>\mbox{\hyperlink{class_sculptor_a4bdea3048b419d58e93074060eaa7b52}{putVoxel}}(XAtual,YAtual,ZAtual);}
+\DoxyCodeLine{132         repaint();}
+\DoxyCodeLine{133     \}}
+\DoxyCodeLine{134 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_plotter_a5824b839b77a451f1ce3b77c574ebf88}\label{class_plotter_a5824b839b77a451f1ce3b77c574ebf88}} 
+\index{Plotter@{Plotter}!setRadioButton@{setRadioButton}}
+\index{setRadioButton@{setRadioButton}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{setRadioButton()}{setRadioButton()}}
+{\footnotesize\ttfamily void Plotter\+::set\+Radio\+Button (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{124 \{}
+\DoxyCodeLine{125     selectedButton = x;}
+\DoxyCodeLine{126 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_plotter_aab16ef164c4faec78f21d14c03126fe8}\label{class_plotter_aab16ef164c4faec78f21d14c03126fe8}} 
+\index{Plotter@{Plotter}!setRGBA@{setRGBA}}
+\index{setRGBA@{setRGBA}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{setRGBA()}{setRGBA()}}
+{\footnotesize\ttfamily void Plotter\+::set\+R\+G\+BA (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{g,  }\item[{int}]{b,  }\item[{int}]{a }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{117 \{}
+\DoxyCodeLine{118     \textcolor{keywordflow}{if}(matrizCriada)\{}
+\DoxyCodeLine{119         matriz-\/>\mbox{\hyperlink{class_sculptor_aff250006dab935683e729c38836bdcdf}{setColor}}(r,g,b,a);}
+\DoxyCodeLine{120     \}}
+\DoxyCodeLine{121 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_plotter_a8960a31d2ecad5b07e2c03b4adac18da}\label{class_plotter_a8960a31d2ecad5b07e2c03b4adac18da}} 
+\index{Plotter@{Plotter}!setSizeMatriz@{setSizeMatriz}}
+\index{setSizeMatriz@{setSizeMatriz}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{setSizeMatriz}{setSizeMatriz}}
+{\footnotesize\ttfamily void Plotter\+::set\+Size\+Matriz (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{104 \{}
+\DoxyCodeLine{105     matrizX = x;}
+\DoxyCodeLine{106     matrizY = y;}
+\DoxyCodeLine{107     matrizZ = z;}
+\DoxyCodeLine{108     matriz = \textcolor{keyword}{new} \mbox{\hyperlink{class_sculptor}{Sculptor}}(x,y,z);}
+\DoxyCodeLine{109     matrizCriada = \textcolor{keyword}{true};}
+\DoxyCodeLine{110     sizeRectX = width()/matrizX;}
+\DoxyCodeLine{111     sizeRectY = height()/matrizY;}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     repaint();}
+\DoxyCodeLine{114 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_plotter_a3833929fd5cb54c66d23b9a86b31aa89}\label{class_plotter_a3833929fd5cb54c66d23b9a86b31aa89}} 
+\index{Plotter@{Plotter}!setZAtual@{setZAtual}}
+\index{setZAtual@{setZAtual}!Plotter@{Plotter}}
+\doxysubsubsection{\texorpdfstring{setZAtual()}{setZAtual()}}
+{\footnotesize\ttfamily void Plotter\+::set\+Z\+Atual (\begin{DoxyParamCaption}\item[{int}]{z }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{98 \{}
+\DoxyCodeLine{99     ZAtual = z;}
+\DoxyCodeLine{100     repaint();}
+\DoxyCodeLine{101 \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+2611/\+P\+R\+O\+J\+E\+T\+O\+P\+A2611/\mbox{\hyperlink{plotter_8h}{plotter.\+h}}\item 
+2611/\+P\+R\+O\+J\+E\+T\+O\+P\+A2611/\mbox{\hyperlink{plotter_8cpp}{plotter.\+cpp}}\end{DoxyCompactItemize}
